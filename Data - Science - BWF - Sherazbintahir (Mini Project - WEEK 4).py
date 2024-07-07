@@ -1,14 +1,12 @@
 
-# Hi, This is Sheraz Bin Tahir. i made a TO DO LIST PROGRAM as my Mini Project. 
-# In this Program we can do following Functions
+# Hi, This is Sheraz Bin Tahir. I made a TO DO LIST PROGRAM as my Mini Project. 
+# In this Program we can do the following Functions
 # 1. Add Task  
 # 2. View Task 
 # 3. Remove Task 
 # 4. Exit
 
-
-
-
+# Initialize the To-Do List
 todo_list = []
 
 def add_task(task):
@@ -49,10 +47,10 @@ def main():
         elif choice == '2':
             view_tasks()
         elif choice == '3':
-            try:
-                task_number = int(input("Enter the task number to remove: "))
-                remove_task(task_number)
-            except ValueError:
+            task_number = input("Enter the task number to remove: ")
+            if task_number.isdigit():
+                remove_task(int(task_number))
+            else:
                 print("Please enter a valid number.")
         elif choice == '4':
             print("Exiting the To-Do List program. Goodbye!")
@@ -62,3 +60,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
